@@ -3,7 +3,7 @@ $(document).on('pageinit', function() {
 	
 	//set up listener for button click
 	$('#getLocationButton').on('click', getPosition);
-	$('#YesLocation').on('click', success);
+	$('#YesLocation').on('click', hello);
 	$('#NoLocation').on('click', fail);
 	
 	//change time box to show message
@@ -46,12 +46,15 @@ function successPosition(position) {
 	$('#longtext').val(longitude);
 	
 }
-var watchID = navigator.geolocation.watchPosition(
-				success, fail, locationOptions);
+function hello(){
+
+	var watchID = navigator.geolocation.watchPosition(
+	success, fail, locationOptions); 
+	}
 	
 function success(position) {
 	//do something with the position
-		var unixtime = new Date(position.timestamp);
+	var unixtime = new Date(position.timestamp);
 	var date = unixtime.toDateString();
 
 	var latitude = position.coords.latitude;
