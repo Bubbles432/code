@@ -6,10 +6,10 @@
         id        = "com.phonegap.helloworld"
         version   = "1.0.0">
 
-    <name>Peanut Butter</name>
+    <name>The 5 D's of Dodgeball</name>
 
     <description>
-        A sample application that counts the occurances of lifecycle events.
+        A sample application that counts the occurances of GPS locating.
     </description>
 
     <author href="worcester.ac.uk" email="c.bowers@worc.ac.uk">
@@ -20,4 +20,5 @@
 	
 	<access origin="*"/>
    	<plugin name="cordova-plugin-whitelist" version="1" />
+	<plugin name="org.apache.cordova.geolocation" spec="0.3.10" source="pgb" />
 </widget>
