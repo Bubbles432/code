@@ -11,7 +11,7 @@ $(document).on('pageinit', function() {
 	//set up listener for button click
 	$('#getLocationButton').on('click', getPosition);
 	$('#YesLocation').on('click', hello);
-	$('#NoLocation').on('click', bye);
+	$('#NoLocation').on('click', Bye);
 	
 	//change time box to show message
 	$('#time').val("Press the button to get location data");
