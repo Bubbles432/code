@@ -20,5 +20,5 @@
 	
 	<access origin="*"/>
    	<plugin name="cordova-plugin-whitelist" version="1" />
-	<plugin name="org.apache.cordova.geolocation" spec="0.3.10" source="pgb" />
+	<plugin name="cordova-plugin-geolocation" spec="~2.4.0" />
 </widget>
