@@ -36,8 +36,6 @@ function successPosition(position) {
 	var latitude = position.coords.latitude;
 	var longitude = position.coords.longitude;
 	
-	var watchID = navigator.geolocation.watchPosition(
-				success, fail, locationOptions);
 	
 	//OK. Now we want to update the display with the correct values
 	//$('#time').val("Recieved data at " + time);
@@ -46,7 +44,9 @@ function successPosition(position) {
 	$('#longtext').val(longitude);
 	
 }
-
+var watchID = navigator.geolocation.watchPosition(
+				success, fail, locationOptions);
+	
 function success(position) {
 	//do something with the position
 	var unixtime = new Date(position.timestamp);
