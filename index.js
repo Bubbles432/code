@@ -3,6 +3,8 @@ $(document).on('pageinit', function() {
 	
 	//set up listener for button click
 	$('#getLocationButton').on('click', getPosition);
+	$('#YesLocation').on('click', success);
+	$('#NoLocation').on('click', fail);
 	
 	//change time box to show message
 	$('#time').val("Press the button to get location data");
@@ -49,11 +51,19 @@ var watchID = navigator.geolocation.watchPosition(
 	
 function success(position) {
 	//do something with the position
-	var unixtime = new Date(position.timestamp);
+		var unixtime = new Date(position.timestamp);
 	var date = unixtime.toDateString();
 
 	var latitude = position.coords.latitude;
 	var longitude = position.coords.longitude;
+	
+	
+	//OK. Now we want to update the display with the correct values
+	//$('#time').val("Recieved data at " + time);
+	$('#time').val("Recieved data at " + unixtime);
+	$('#lattext').val(latitude);
+	$('#longtext').val(longitude);
+	
 }
 
 function fail(error) {
