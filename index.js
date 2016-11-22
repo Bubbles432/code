@@ -58,6 +58,7 @@ function success(position) {
 
 function fail(error) {
 	//do something with the error
+	navigator.geolocation.clearWatch(watchID);
 }
 
 
