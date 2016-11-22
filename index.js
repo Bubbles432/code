@@ -5,7 +5,8 @@ var locationOptions = {
 	enableHighAccuracy: true 
 };
 
-var watchID; 
+var watchID;
+var unixtime; 
 $(document).on('pageinit', function() {
 	
 	//set up listener for button click
@@ -39,7 +40,7 @@ function successPosition(position) {
 
 	//lets get some stuff out of the position object
 	//var time = position.timestamp;
-	var unixtime = new Date(position.timestamp);
+	unixtime = new Date(position.timestamp);
 	var date = unixtime.toDateString();
 
 	var latitude = position.coords.latitude;
@@ -56,12 +57,12 @@ function successPosition(position) {
 function hello(){
 
 	watchID = navigator.geolocation.watchPosition(
-	success, fail, locationOptions); 
+	success, failPosition, locationOptions); 
 	}
 	
 function success(position) {
 	//do something with the position
-	var unixtime = new Date(position.timestamp);
+	unixtime = new Date(position.timestamp);
 	var date = unixtime.toDateString();
 
 	var latitude = position.coords.latitude;
@@ -79,6 +80,7 @@ function success(position) {
 function Bye() {
 	//do something with the error
 	navigator.geolocation.clearWatch(watchID);
+	$('#time').val("Last recieved data at " + unixtime);	
 }
 
 
